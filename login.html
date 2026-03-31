@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <form action="">
+    <label >Usuario:<input type="text" name="usuario" id="usuario"></label><br>
+    <label >Senha: <input type="password" name="senha" id="senha"> </label><br><br>
+
+    <button onclick="login()"> Entrar </button>
+    </form>
+    <p>Esqueceu a senha?</p>
+    <a href="#">Recuperar Senha</a>
+
+</body>
+<script>
+    
+    function login(){
+
+    const usuarioBanco = 'Marcus';
+    const senhaBanco = 123;
+
+    const usuario_digitado = document.getElementById('usuario');
+    const senha_digitada = document.getElementById('senha');
+
+    let usuario_value = usuario_digitado.value;
+    let senha_value = senha_digitada.value;
+    //buscamos o que esta salvo no banco de dados e comparamos com o que foi digitado para ver se esta correto
+
+        if (usuario_value !== usuarioBanco || senha_value != senhaBanco) {
+          alert("Usuario ou senha errado! Digite novamente!");
+          
+        }
+        else{
+            alert('Usuario: '+usuario_value+' logado!');
+        }
+    }
+</script>
+</html>
