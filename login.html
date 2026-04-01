@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <Style>
+        /*CSS para centralizacao na pagina*/
+        *{
+            text-align: center;
+            
+            }
+        form{
+            background-color:aquamarine;
+            width: 30%;
+            margin: 0 auto;
+            
+        }
+
+    </Style>
 </head>
 <body>
-    <h1>Login</h1>
+    
     
     <form action="">
-    <label >Usuario:<input type="text" name="usuario" id="usuario"></label><br>
+        <legend><h1>Login</h1>
+    <label >Usuario: <input type="text" name="usuario" id="usuario"></label><br><br>
     <label >Senha: <input type="password" name="senha" id="senha"> </label><br><br>
 
     <button onclick="login()"> Entrar </button>
     </form>
     <p>Esqueceu a senha?</p>
     <a href="#">Recuperar Senha</a>
-
+</legend>
 </body>
 <script>
     
@@ -25,20 +40,17 @@
     const usuarioBanco = 'Marcus';
     const senhaBanco = 123;
 
-    const usuario_digitado = document.getElementById('usuario');
-    const senha_digitada = document.getElementById('senha');
+    let usuario_digitado = document.getElementById('usuario').value;
+    let senha_digitada = document.getElementById('senha').value;
 
-    let usuario_value = usuario_digitado.value;
-    let senha_value = senha_digitada.value;
-    //buscamos o que esta salvo no banco de dados e comparamos com o que foi digitado para ver se esta correto
-
-        if (usuario_value !== usuarioBanco || senha_value != senhaBanco) {
+        if (usuario_digitado !== usuarioBanco || senha_digitada != senhaBanco) {
           alert("Usuario ou senha errado! Digite novamente!");
           
         }
         else{
-            alert('Usuario: '+usuario_value+' logado!');
+            alert('Usuario: '+usuario_digitado+' logado!');
         }
     }
+
 </script>
 </html>
